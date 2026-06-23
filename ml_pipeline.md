@@ -208,3 +208,18 @@
     - ルートディレクトリに実験結果を可視化するvisualaize_result.ipynbを実装してください
     - 学習結果を保存しているoutputsディレクトリ内を再帰的に捜査し，同条件における全seedの結果から平均，標準偏差を計算し信頼区間をプロットしてください．
     - この際，可視化したい選択肢をプログラムで記述し指定できる様にしてください
+
+### ディレクトリ構造の例
+my-research-workspace/
+├── .git/
+├── .gitignore               # outputs/ や巨大なデータセットを弾く設定
+├── requirements.txt         # venv環境用のライブラリ一覧
+├── visualize_result.ipynb   
+├── cursor-ml-template/      
+│   ├── ml_pipeline_v1.md    # 仕様書
+│   └── ml_utils.py          # 便利関数
+└── mnist/                   # {data_name}
+    └── cnn/                 # {model_name}
+        ├── model.py         # 任意のCNN構造を記述
+        ├── utils.py         # 専用の load_dataloader を記述
+        └── train.ipynb      # 実際に学習を行うノートブック
